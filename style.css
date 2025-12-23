@@ -62,7 +62,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center bottom;
-    z-index: 9;
+    z-index: 8;
 }
 
 /* Styling Jarum Jam (Path dan Tinggi Diperbaiki ke ukuran asli) */
@@ -78,7 +78,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center bottom;
-    z-index: 8;
+    z-index: 9;
 }
 
 
@@ -99,4 +99,5 @@ body {
     z-index: 10; 
     
     border-radius: 50%;
+
 }
