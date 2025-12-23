@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: transparent; 
+}
+
+.jam-analog {
+    /* 🚨 PERUBAHAN UKURAN MENJADI KOTAK 320x320 */
+    width: 320px; 
+    height: 320px;
+    position: relative;
+    background-image: url('jam-mekah-mala.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 6;
+    /* Opsional: Tampilan belakang jam */
+    /* background: url('images/dial.png') no-repeat center center / cover; */
+    /* border-radius: 100%; */
+}
+
+.jarum {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    
+    /* 🚨 PERUBAHAN TITIK PUTAR: Kembali ke pusat bawah jarum (pusat jam) */
+    transform-origin: bottom center; 
+    
+    transform: rotate(0deg); 
+}
+
+/* Styling Jarum Detik (Path dan Tinggi Diperbaiki ke ukuran asli) */
+.detik {
+    width: 5px; 
+    /* 🚨 TINGGI KEMBALI KE ASLI: 200px */
+    height: 140px; 
+    /* Path sudah disetel ke folder images */
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-image: url('jarum-detik.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 10;
+}
+
+/* Styling Jarum Menit (Path dan Tinggi Diperbaiki ke ukuran asli) */
+.menit {
+    width: 16px;
+    /* 🚨 TINGGI KEMBALI KE ASLI: 180px */
+    height: 120px; 
+    /* Path sudah disetel ke folder images */
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-image: url('jarum-menit.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 9;
+}
+
+/* Styling Jarum Jam (Path dan Tinggi Diperbaiki ke ukuran asli) */
+.jam {
+    width: 16px;
+    /* 🚨 TINGGI KEMBALI KE ASLI: 120px */
+    height: 80px; 
+    /* Path sudah disetel ke folder images */
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-image: url('jarum-jam.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 8;
+}
+
+
+/* Styling Lingkaran Tengah (TIDAK BERUBAH) */
+.tengah {
+    width: 20px; 
+    height: 20px; 
+    
+    background-image: url('tengah-jam.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; 
+    
+    border-radius: 50%;
+}
