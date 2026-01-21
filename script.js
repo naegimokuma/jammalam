@@ -13,11 +13,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 });
 
 function setWaktuUTC7() {
-    let now = new Date();
-    
-    // --- PENGURANGAN 8 MENIT ---
-    now.setMinutes(now.getMinutes() - 8); 
-
+    const now = new Date();
     const parts = formatter.formatToParts(now);
     
     const jam = Number(parts.find(p => p.type === 'hour').value);
@@ -30,7 +26,7 @@ function setWaktuUTC7() {
     const jam12 = jam % 12;
     const derajatJam = ((jam12 / 12) * 360) + ((menit / 60) * 30);
 
-    // Transformasi Rotasi
+    // 🚨 PERBAIKAN: Tambahkan translateX(-50%) di setiap rotasi agar tetap di tengah
     jarumDetik.style.transform = `translateX(-50%) rotate(${derajatDetik}deg)`;
     jarumMenit.style.transform = `translateX(-50%) rotate(${derajatMenit}deg)`;
     jarumJam.style.transform = `translateX(-50%) rotate(${derajatJam}deg)`;
