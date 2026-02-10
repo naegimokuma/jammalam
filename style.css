@@ -8,7 +8,6 @@ body {
 }
 
 .jam-analog {
-    /* 🚨 PERUBAHAN UKURAN MENJADI KOTAK 320x320 */
     width: 320px; 
     height: 320px;
     position: relative;
@@ -17,28 +16,21 @@ body {
     background-repeat: no-repeat;
     background-position: center bottom;
     z-index: 6;
-    /* Opsional: Tampilan belakang jam */
-    /* background: url('images/dial.png') no-repeat center center / cover; */
-    /* border-radius: 100%; */
 }
 
 .jarum {
     position: absolute;
     bottom: 50%;
     left: 50%;
-    
-    /* 🚨 PERUBAHAN TITIK PUTAR: Kembali ke pusat bawah jarum (pusat jam) */
     transform-origin: bottom center; 
-    
-    transform: rotate(0deg); 
+    transform: translateX(-50%) rotate(0deg); /* Ditambah translateX agar center */
 }
 
-/* Styling Jarum Detik (Path dan Tinggi Diperbaiki ke ukuran asli) */
+/* --- Versi Siang (Default) --- */
+
 .detik {
     width: 5px; 
-    /* 🚨 TINGGI KEMBALI KE ASLI: 200px */
     height: 140px; 
-    /* Path sudah disetel ke folder images */
     position: absolute;
     bottom: 50%;
     left: 50%;
@@ -47,14 +39,12 @@ body {
     background-repeat: no-repeat;
     background-position: center bottom;
     z-index: 10;
+    transform-origin: bottom center;
 }
 
-/* Styling Jarum Menit (Path dan Tinggi Diperbaiki ke ukuran asli) */
 .menit {
     width: 16px;
-    /* 🚨 TINGGI KEMBALI KE ASLI: 180px */
     height: 120px; 
-    /* Path sudah disetel ke folder images */
     position: absolute;
     bottom: 50%;
     left: 50%;
@@ -63,14 +53,12 @@ body {
     background-repeat: no-repeat;
     background-position: center bottom;
     z-index: 8;
+    transform-origin: bottom center;
 }
 
-/* Styling Jarum Jam (Path dan Tinggi Diperbaiki ke ukuran asli) */
 .jam {
     width: 16px;
-    /* 🚨 TINGGI KEMBALI KE ASLI: 120px */
     height: 80px; 
-    /* Path sudah disetel ke folder images */
     position: absolute;
     bottom: 50%;
     left: 50%;
@@ -79,25 +67,43 @@ body {
     background-repeat: no-repeat;
     background-position: center bottom;
     z-index: 9;
+    transform-origin: bottom center;
 }
 
-
-/* Styling Lingkaran Tengah (TIDAK BERUBAH) */
 .tengah {
     width: 20px; 
     height: 20px; 
-    
     background-image: url('tengah-jam.png'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
-
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10; 
-    
+    z-index: 11; 
     border-radius: 50%;
+} /* <-- SEBELUMNYA KURANG KURUNG TUTUP DI SINI */
 
+/* --- Mode Malam (Pukul 18.00 - 06.00) --- */
+
+.mode-malam {
+    transition: background-image 0.5s ease-in-out;
 }
+
+.jam.mode-malam {
+    background-image: url('jarum-jam-malam.png') !important;
+}
+
+.menit.mode-malam {
+    background-image: url('jarum-menit-malam.png') !important;
+}
+
+.detik.mode-malam {
+    background-image: url('jarum-detik-malam.png') !important;
+}
+
+.tengah.mode-malam {
+    background-image: url('tengah-jam-malam.png') !important;
+}
+
