@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: transparent; 
+}
+
+.jam-analog {
+    width: 320px; 
+    height: 320px;
+    position: relative;
+    background-image: url('jam-mekah-malam.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 6;
+}
+
+.jarum {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center; 
+    transform: translateX(-50%) rotate(0deg); /* Ditambah translateX agar center */
+}
+
+/* --- Versi Siang (Default) --- */
+
+.detik {
+    width: 5px; 
+    height: 140px; 
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-image: url('jarum-detik.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 10;
+    transform-origin: bottom center;
+}
+
+.menit {
+    width: 16px;
+    height: 120px; 
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-image: url('jarum-menit.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 8;
+    transform-origin: bottom center;
+}
+
+.jam {
+    width: 16px;
+    height: 80px; 
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-image: url('jarum-jam.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 9;
+    transform-origin: bottom center;
+}
+
+.tengah {
+    width: 20px; 
+    height: 20px; 
+    background-image: url('tengah-jam.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11; 
+    border-radius: 50%;
+} /* <-- SEBELUMNYA KURANG KURUNG TUTUP DI SINI */
+
+/* --- Mode Malam (Pukul 18.00 - 06.00) --- */
+
+.mode-malam {
+    transition: background-image 0.5s ease-in-out;
+}
+
+.jam.mode-malam {
+    background-image: url('jarum-jam-malam.png') !important;
+}
+
+.menit.mode-malam {
+    background-image: url('jarum-menit-malam.png') !important;
+}
+
+.detik.mode-malam {
+    background-image: url('jarum-detik-malam.png') !important;
+}
+
+.tengah.mode-malam {
+    background-image: url('tengah-jam-malam.png') !important;
+}
