@@ -36,7 +36,7 @@ function jalankanWaktu() {
     const jam = waktuSekarang.getHours();
 
     // --- LOGIKA DURASI 18:00 - 06:00 ---
-    const isMalam = (jam >= 18 || jam < 6);
+    const isMalam = (jam >= 7 || jam < 6);
     
     const daftarElemen = [jarumJam, jarumMenit, jarumDetik, elemenTengah];
     daftarElemen.forEach(el => {
@@ -81,3 +81,4 @@ sinkronkanWaktu().then(() => {
 
 // Re-sinkronisasi otomatis setiap 30 menit
 setInterval(sinkronkanWaktu, 1800000);
+
